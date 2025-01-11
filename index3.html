@@ -5,33 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="">  <!-- 4pg main div -->  
-        <div>
-            <nav class="flex items-center justify-between px-8 py-4  mr-32 ml-32">
-                <div class="w-20 h-16 mt-6">
-                    <img src="assets/Images/logo pic.png" alt="logo" >
-                </div>
-                <div class="flex justify-center items-center space-x-8  gap-10 ">
-                    <a href="#" class="underline underline-offset-4 decoration-underline decoration-black overline hover:underline">ГЛАВНАЯ</a>
-                    <a href="#" class="hover:underline">ГАЛЕРЕЯ</a>
-                    <a href="#" class="hover:underline">ПРОЕКТЫ</a>
-                    <a href="#" class="hover:underline">СЕРТИФИКАТЫ</a>
-                    <a href="#" class="hover:underline mr-10">КОНТАКТЫ</a>
-                </div>
-            </nav>
-        </div>
-        <div class="text-5xl mt-24 mb-4">  <!-- title -->
+        <nav class=" mr-32 ml-32">
+            <div class=" nav-logo hidden sm:flex items-center justify-between mt-10 ">
+                <a href="/index.html">
+                    <img src="assets/Images/logo pic.png" alt="logo" class="w-40 h-auto">
+                </a>
+                <button class="lg:hidden cursor-pointer" id="menu-toggle">
+                    <i class="fa-solid fa-bars text-5xl"></i>
+                </button>
+            </div>
+            <ul class="nav-links hidden lg:flex justify-end text-2xl mb-12 space-x-6 gap-6   ">
+                <li class="hover:underline "><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li class="hover:underline "><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li class="hover:underline "><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li class="hover:underline "><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li class="hover:underline "><a href="/index4.html">КОНТАКТЫ</a></li>                       
+            </ul>
+    
+                <!-- Mobile Navigation -->
+    
+            <ul id="nav-links-mobile" class="hidden lg:hidden absolute top-0 right-0 bg-gray-400 w-full p-6 space-y-6 text-2xl">
+                <li><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li><a href="/index4.html">КОНТАКТЫ</a></li>               
+            </ul>
+        </nav>
+        
+
+        <div class="text-5xl mt-24 mb-4 sm:mt-10">  <!-- title -->
             <h3 class=" ml-32 text-gray-400 font-small">сертификаты
             </h3>
             <h3 class=" ml-32 font-bold">КОМПАНИИ</h3>
         </div>
-        <div class="flex justify-center items-center m-32">
-            <img class="mr-30" src="assets/Images/4thpg(1)img.png" alt="doc1">
-            <img class="mr-30" src="assets/Images/4thpg(2)img.png" alt="doc2">
-            <img class="mr-30" src="assets/Images/4thpg(3)img.png" alt="doc3">
+    
+        <div class="flex flex-wrap justify-center items-center gap-4 lg:gap-8 mx-4 mb-12">
+            <img class="w-1/3 lg:w-auto" src="assets/Images/4thpg(1)img.png" alt="doc1">
+            <img class="w-1/3 lg:w-auto" src="assets/Images/4thpg(2)img.png" alt="doc2">
+            <img class="w-1/3 lg:w-auto" src="assets/Images/4thpg(3)img.png" alt="doc3">
         </div>
+
+
+
+
         <!-- footer -->
         <footer class="bg-black text-gray-200 h-full w-full">
             <div class="flex justify-center items-start ml-32 mr-32 py-10 ">
@@ -79,14 +101,31 @@
 
             </div>
 
-            <!-- Footer Bottom -->
+            Footer Bottom 
             <div class="mt-8 text-center text-sm text-gray-500 border-t border-gray-700 py-4">
                 <a href="">© 2019 Digital Project. Bce права защищены.</a>
                 
-            </div>
+            </div> 
 
 
 
-    </div>  <!-- 4pg main div -->
+
+
+        
+
+
+    </div>    <!-- main div -->
+    
+
+
+
+
+    <script>
+        const  menuToggle = document.getElementById('menu-toggle')
+        const  mobileNav = document.getElementById('nav-links-mobile')
+        menuToggle.addEventListener('click',() => {
+            mobileNav.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

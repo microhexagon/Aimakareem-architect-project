@@ -5,24 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 
 </head>
 <body>
     <div>  <!-- main div -->
-        <div>
-            <nav class="flex items-center justify-between px-8 py-4  mr-32 ml-32">
-                <div class="w-20 h-16 mt-6">
-                    <img src="assets/Images/logo pic.png" alt="logo" >
-                </div>
-                <div class="flex justify-center items-center space-x-8  gap-10 ">
-                    <a href="" class="underline underline-offset-4 decoration-underline decoration-black overline hover:underline">ГЛАВНАЯ</a>
-                    <a href="#" class="hover:underline">ГАЛЕРЕЯ</a>
-                    <a href="#" class="hover:underline">ПРОЕКТЫ</a>
-                    <a href="#" class="hover:underline">СЕРТИФИКАТЫ</a>
-                    <a href="#" class="hover:underline mr-10">КОНТАКТЫ</a>
-                </div>
-            </nav>
-        </div>
+        <nav class=" mr-32 ml-32">
+            <div class=" nav-logo hidden sm:flex items-center justify-between mt-10 ">
+                <a href="/index.html">
+                    <img src="assets/Images/logo pic.png" alt="logo" class="w-40 h-auto">
+                </a>
+                <button class="lg:hidden cursor-pointer" id="menu-toggle">
+                    <i class="fa-solid fa-bars text-5xl"></i>
+                </button>
+            </div>
+            <ul class="nav-links hidden lg:flex justify-end text-2xl mb-12 space-x-6 gap-6   ">
+                <li class="hover:underline "><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li class="hover:underline "><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li class="hover:underline "><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li class="hover:underline "><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li class="hover:underline "><a href="/index4.html">КОНТАКТЫ</a></li>                       
+            </ul>
+    
+                <!-- Mobile Navigation -->
+    
+            <ul id="nav-links-mobile" class="hidden lg:hidden absolute top-0 right-0 bg-gray-400 w-full p-6 space-y-6 text-2xl">
+                <li><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li><a href="/index4.html">КОНТАКТЫ</a></li>               
+            </ul>
+        </nav>
         <div class="container flex">
             <div class="left ml-32">
                 <div class="text-5xl mt-20 mb-8">  <!-- title -->
@@ -112,5 +127,12 @@
 
 
     </div>  <!-- main div -->
+    <script>
+        const  menuToggle = document.getElementById('menu-toggle')
+        const  mobileNav = document.getElementById('nav-links-mobile')
+        menuToggle.addEventListener('click',() => {
+            mobileNav.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
