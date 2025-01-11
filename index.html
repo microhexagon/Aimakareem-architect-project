@@ -12,42 +12,35 @@
 <body>
     <script src="script.js"></script>
     <div><!-- 1st page main div --> 
-        <div id="menu-bar" class="absolute w-full">
-            <nav>
-                <!-- Logo Section -->
-                <div class="lg:hidden sm:h-16 sm:mt-6 sm:ml-4 flex justify-between items-center px-4">
-                    <img src="/assets/Images/logo pic.png" alt="logo" class="h-12">
-                    <!-- Menu Icon -->
-                    <button id="menu-icon" class="lg:hidden focus:outline-none text-2xl">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+        <nav class=" mr-32 ml-32">
+            <div class=" nav-logo hidden sm:flex items-center justify-between mt-10 ">
+                <a href="">
+                    <img src="assets/Images/logo pic.png" alt="logo" class="w-40 h-auto">
+                </a>
+                <button class="lg:hidden cursor-pointer" id="menu-toggle">
+                    <i class="fa-solid fa-bars text-5xl"></i>
+                </button>
+            </div>
+            <ul class="nav-links hidden lg:flex justify-end text-2xl mb-12 space-x-6 gap-6   ">
+                <li class="hover:underline "><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li class="hover:underline "><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li class="hover:underline "><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li class="hover:underline "><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li class="hover:underline "><a href="/index4.html">КОНТАКТЫ</a></li>                       
+            </ul>
+    
+                <!-- Mobile Navigation -->
+    
+            <ul id="nav-links-mobile" class="hidden lg:hidden absolute top-0 right-0 bg-gray-400 w-full p-6 space-y-6 text-2xl">
+                <li><a href="/index.html">ГЛАВНАЯ</a></li>            
+                <li><a href="/index1.html">ГАЛЕРЕЯ</a></li>            
+                <li><a href="/index2.html">ПРОЕКТЫ</a></li>            
+                <li><a href="/index3.html">СЕРТИФИКАТЫ</a></li>            
+                <li><a href="/index4.html">КОНТАКТЫ</a></li>               
+            </ul>
+        </nav>
         
-                <!-- Menu Items -->
-                <ul id="menu" class="hidden lg:hidden sm:flex sm:flex-col sm:space-y-4 sm:mt-6 sm:px-4 bg-white shadow-md">
-                    <li><a href="#" class="hover:underline">ГЛАВНАЯ</a></li>
-                    <li><a href="#" class="hover:underline">ГАЛЕРЕЯ</a></li>
-                    <li><a href="#" class="hover:underline">ПРОЕКТЫ</a></li>
-                    <li><a href="#" class="hover:underline">СЕРТИФИКАТЫ</a></li>
-                    <li><a href="#" class="hover:underline">КОНТАКТЫ</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-        <div>
-            <nav class="hidden lg:flex items-center justify-between px-8 py-4 mr-32 ml-32">
-                <div class="w-20 h-16 mt-6">
-                    <img class="" src="/assets/Images/logo pic.png" alt="logo" >
-                </div>
-                <div class=" flex justify-center items-center space-x-8 gap-10 ">
-                    <a href="#" class="underline underline-offset-4 decoration-underline decoration-black overline hover:underline">ГЛАВНАЯ</a>
-                    <a href="#" class="hover:underline">ГАЛЕРЕЯ</a>
-                    <a href="#" class="hover:underline">ПРОЕКТЫ</a>
-                    <a href="#" class="hover:underline">СЕРТИФИКАТЫ</a>
-                    <a href="#" class="hover:underline mr-10">КОНТАКТЫ</a>
-                </div>
-            </nav>
-        </div>  
+    
         <!-- section 2 -->
             <div class="flex justify-between ">
                 <div class="left div text-5xl m-32">
@@ -275,14 +268,10 @@
 
     </div> <!-- 1st page main div -->
     <script>
-        // Select the menu icon and menu
-        const menuIcon = document.getElementById("menu-icon");
-        const menu = document.getElementById("menu");
-    
-        // Add event listener for the menu icon
-        menuIcon.addEventListener("click", () => {
-            // Toggle the 'hidden' class to show or hide the menu
-            menu.classList.toggle("");
+        const  menuToggle = document.getElementById('menu-toggle')
+        const  mobileNav = document.getElementById('nav-links-mobile')
+        menuToggle.addEventListener('click',() => {
+            mobileNav.classList.toggle('hidden');
         });
     </script>
 </body>
